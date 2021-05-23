@@ -1,0 +1,23 @@
+
+<h1><%= @car.make%><br></h1>
+<div id="list" class="mediaa" >
+<img class="media-object" src=<%= @car.urlpictures %> /><br>
+<p>Make: <%= @car.make%></p><br>
+<p>Model: <%= @car.model%></p><br>
+<p>Year: <%= @car.year%></p><br>
+<p>Color: <%= @car.color%></p><br>
+<p>Price: <%= @car.price%>$</p><br>
+<% if @car.user_id == current_user.id %>
+<a href="/carlist/<%=@car.id%>/edit">Edit this Car!</a>
+<p>Or</p>
+<form action="/carlist/<%=@car.id%>" method="post">
+<input type="hidden"  name="_method" value="delete">
+<input type="submit" value="Delete this Car!"> 
+</form>
+<% end %>
+</div>
+<br>
+<br>
+<br>
+<br>
+

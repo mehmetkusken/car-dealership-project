@@ -1,0 +1,21 @@
+<h1>Inventory of Zone Dealership</h1>
+<div id="list" class="media">
+<% @car.each do |car| %>
+<div class="mediaa" >
+<p><a href="/carlist/<%= car.id%>"><%= car.make%></a></p><br>
+<img class="media-object" src=<%= car.urlpictures %> /><br>
+<p>Make: <%= car.make%></p><br>
+<p>Model: <%= car.model%></p><br>
+<p>Year: <%= car.year%></p><br>
+<p>Color: <%= car.color%></p><br>
+<p>Price: <%= car.price%>$</p><br>
+
+
+</div>
+<% end %>
+
+</div>
+<br>
+<br>
+<br>
+<br>
