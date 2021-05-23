@@ -7,14 +7,12 @@
 <p>Year: <%= @car.year%></p><br>
 <p>Color: <%= @car.color%></p><br>
 <p>Price: <%= @car.price%>$</p><br>
-<% if @car.user_id == current_user.id %>
 <a href="/carlist/<%=@car.id%>/edit">Edit this Car!</a>
 <p>Or</p>
 <form action="/carlist/<%=@car.id%>" method="post">
 <input type="hidden"  name="_method" value="delete">
 <input type="submit" value="Delete this Car!"> 
 </form>
-<% end %>
 </div>
 <br>
 <br>

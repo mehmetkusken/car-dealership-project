@@ -17,7 +17,6 @@ class UsersController < ApplicationController
       if user.valid?
         redirect to '/login'
       else
-        @errors= user.errors.full_messages
         erb :'/users/signup'
       
       end
@@ -38,12 +37,6 @@ class UsersController < ApplicationController
       end
     end
   
-    get '/users' do
-      @users = User.all
-      erb :'/users/users'
-    end
-  
-  
     get '/logout' do
       erb :'/users/logout'
     end
@@ -53,17 +46,6 @@ class UsersController < ApplicationController
       redirect '/'
     end
   
-    get '/user' do
-      @user = User.find_by_id(params[:id])
-      erb :'/users/user'
-    end
-  
-    delete "/user" do
-      @user = User.find_by_id(params[:id]) 
-      current_user.destroy
-      session.clear
-      redirect to '/'
-    end
-  
+    
   end
   
