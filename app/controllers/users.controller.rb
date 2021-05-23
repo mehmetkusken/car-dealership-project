@@ -1,13 +1,5 @@
 class UsersController < ApplicationController
 
-    get '/about-us' do
-      erb :'/about-us'
-    end
-  
-    get '/contact-us' do
-      erb :'/contact-us'
-    end
-  
     get '/signup' do
       erb :'/users/signup'
     end

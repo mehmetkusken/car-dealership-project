@@ -13,6 +13,18 @@ class ApplicationController < Sinatra::Base
   get '/' do
     erb :'welcome'
   end
+  
+  get '/welcome' do
+    erb :'/welcome'
+  end 
+
+  get '/about-us' do
+    erb :'/about-us'
+  end
+
+  get '/contact-us' do
+    erb :'/contact-us'
+  end
 
   helpers do
 

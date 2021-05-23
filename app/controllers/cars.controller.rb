@@ -1,8 +1,5 @@
 class CarsController < ApplicationController
 
-    get '/welcome' do
-        erb :'/welcome'
-    end 
 
     get '/submited' do
         erb :'/cars/submited'
