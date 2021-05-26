@@ -10,9 +10,7 @@ class UsersController < ApplicationController
         redirect to '/login'
       else
         redirect to "/signup"
-      
       end
-     
     end
   
     get '/login' do
@@ -25,7 +23,7 @@ class UsersController < ApplicationController
         session[:user_id] = user.id
         redirect '/welcome'
       else
-      redirect '/signup'
+        redirect '/signup'
       end
     end
   

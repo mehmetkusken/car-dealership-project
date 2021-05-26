@@ -26,8 +26,8 @@ class CarsController < ApplicationController
 
     get '/carlist/:id' do
         if logged_in?
-        @car = Car.find(params[:id])
-        erb :'/cars/carindex'  
+            @car = Car.find(params[:id])
+            erb :'/cars/carindex'  
         else 
             redirect '/login'
         end 
