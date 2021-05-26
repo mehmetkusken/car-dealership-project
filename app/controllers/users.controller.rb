@@ -9,7 +9,7 @@ class UsersController < ApplicationController
       if user.valid?
         redirect to '/login'
       else
-        erb :'/users/signup'
+        redirect to "/signup"
       
       end
      
@@ -37,7 +37,5 @@ class UsersController < ApplicationController
       session.clear
       redirect '/'
     end
-  
-    
   end
   

@@ -6,13 +6,17 @@ class CarsController < ApplicationController
     end
 
     get '/new' do
+        @car = Car.new
         erb :'/cars/new'
     end 
 
     post '/submited' do
     car = current_user.cars.create(params[:car])
-    erb :'/cars/submited'
-    redirect '/submited'
+        if car.valid?
+        redirect '/carlist'
+        else
+        redirect '/new'
+        end
     end
 
     get '/carlist' do
@@ -53,6 +57,4 @@ class CarsController < ApplicationController
             redirect "/carlist/#{@car.id}"
         end
     end
-    
-    
 end
